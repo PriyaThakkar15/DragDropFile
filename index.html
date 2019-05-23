@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Material Design Bootstrap</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- Start your project here-->
+<div class="container">
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="co-12">
+            <div class="main-div">
+                <div>
+                    <form class="my-form">
+                        <label for="fileElem" id="drop-area"class="text-center">Drop File For Upload </label>
+                        <input type="file" id="fileElem" multiple onchange="handleFiles(this.files)">
+                    </form>
+                </div>
+                <div class="dynamic-li-content pt-4">
+                    <ul>
+                        <li>
+                            <div class="row align-items-center">
+                                <div class="col-auto d-flex">
+                                    <div class="avatar">
+                                        <img class="avatar-img rounded" src="..." >
+                                    </div>
+                                </div>
+                                <div class="col ml--3">
+                                    <p class="mb-1" data-dz-name="">file.txt</p>
+                                </div>
+                                <div class="col-auto ml-auto">
+                                    <div class="dropdown">
+                                        <a href="#" class="dropdown-ellipses dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            <i class="fe fe-more-vertical"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right" >
+                                            <a href="#" class="dropdown-item" >
+                                                Remove
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Start your project here-->
+
+<!-- SCRIPTS -->
+<!-- JQuery -->
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="js/mdb.js"></script>
+
+<script type="text/javascript">
+    var dropArea = document.getElementById('drop-area');
+    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(function (eventName) {
+        dropArea.addEventListener(eventName, preventDefaults, false)
+    });
+
+    function preventDefaults(e) {
+        e.preventDefault();
+        e.stopPropagation()
+    }
+
+    function handleFiles(files) {
+        // ([files]).forEach(uploadFile)
+        console.log(files)
+    }
+
+    dropArea.addEventListener('drop', handleDrop, false)
+
+    function handleDrop(e) {
+        var dt = e.dataTransfer;
+        var files = dt.files;
+
+        handleFiles(files)
+    }
+</script>
+
+</body>
+
+</html>

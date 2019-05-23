@@ -1,0 +1,45 @@
+#drop-area {
+    border: 2px dashed #ccc;
+    border-radius: 20px;
+    width: 480px;
+    font-family: sans-serif;
+    padding: 50px;
+    cursor: pointer;
+
+}
+p {
+    margin-top: 0;
+}
+.my-form {
+    margin-bottom: 10px;
+}
+#gallery {
+    margin-top: 10px;
+}
+#gallery img {
+    width: 150px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+#fileElem {
+    display: none;
+}
+.main-div{
+    padding: 10px;
+}
+.dynamic-li-content ul{
+    list-style: none;
+}
+.dynamic-li-content ul{
+    list-style: none;
+}
+.img-box{
+    height: 100px;
+    width:50px;
+    background-color: gray;
+}
+.file-name {
+    margin-left: 5px;
+    vertical-align: middle;
+}
